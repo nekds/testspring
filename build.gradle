@@ -1,0 +1,43 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.6.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'su.xlegion'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.data:spring-data-jpa'
+	implementation 'org.hibernate:hibernate-core'
+	implementation 'org.hibernate:hibernate-entitymanager'
+	//implementation 'org.hibernate.dialect:sqlite-dialect'
+	implementation 'org.xerial:sqlite-jdbc'
+	implementation 'mysql:mysql-connector-java'
+	//implementation 'org.hibernate:hibernate-gradle-plugin'
+	//implementation 'org.hibernate:hibernate-annotations'
+
+	//implementation "org.hibernate:hibernate:3.5.4-Final"
+//	implementation "org.hibernate:hibernate-annotations:3.5.6-Final"
+//	implementation "org.hibernate:hibernate-commons-annotations:3.2.0.Final"
+//	implementation "org.hibernate:hibernate-gradle-plugin:5.2.1.Final"
+//	implementation "org.hibernate:hibernate-tools:5.0.1.Final"
+//	implementation "org.hibernate.dialect:sqlite-dialect:0.1.0"
+	//developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
